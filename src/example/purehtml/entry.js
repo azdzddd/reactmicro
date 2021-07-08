@@ -1,5 +1,6 @@
-const render = ($) => {
-  // $('#purehtml-container').html('Hello, render with jQuery');
+const render = () => {
+  document.getElementById('purehtml-container').innerHTML = 'Hello, rend12234231er with jQuery';
+  console.log('Hello, render with jQuery');
   return Promise.resolve();
 };
 
@@ -10,8 +11,8 @@ const render = ($) => {
       return Promise.resolve();
     },
     mount: () => {
-      console.log('purehtml mount');
-      return render($);
+      console.log('purehtml mount111');
+      return render();
     },
     unmount: () => {
       console.log('purehtml unmount');

@@ -25,6 +25,12 @@ registerMicroApps([
     container: '#containerB',
     activeRule: '/a/b/purehtml',
   },
+  {
+    name: 'vuemicro',
+    entry: '//localhost:8080',
+    container: '#containerC',
+    activeRule: '/a/c/vuemicro',
+  },
 ]);
 
 start();

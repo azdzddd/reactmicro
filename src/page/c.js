@@ -2,5 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function c() {
-  return <div id="containerC">这是c页面</div>;
+  return (
+    <div>
+      这是c路由页面
+      <Link to="/a/c/vuemicro">点击渲染vue微应用</Link>
+      <div id="containerC"></div>
+    </div>
+  );
 }
