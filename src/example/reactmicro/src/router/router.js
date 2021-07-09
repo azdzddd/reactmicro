@@ -1,7 +1,6 @@
 import A from '../page/a';
 import B from '../page/b';
 import C from '../page/c';
-import D from '../page/d';
 import { Redirect } from 'react-router';
 const routes = [
   {
@@ -22,10 +21,6 @@ const routes = [
       {
         path: '/a/c',
         component: C,
-      },
-      {
-        path: '/a/d',
-        component: D,
       },
     ],
   },

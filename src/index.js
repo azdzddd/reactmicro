@@ -27,9 +27,15 @@ registerMicroApps([
   },
   {
     name: 'vuemicro',
-    entry: '//localhost:8080',
+    entry: '//localhost:9999',
     container: '#containerC',
     activeRule: '/a/c/vuemicro',
+  },
+  {
+    name: 'reactmicro',
+    entry: '//localhost:8888',
+    container: '#containerD',
+    activeRule: '/a/d/reactmicro',
   },
 ]);
 
