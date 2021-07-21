@@ -1,6 +1,6 @@
 import B from './index';
 const b = {
-  path: '/a/b',
+  path: '/a/b/d',
   component: B,
 };
 
