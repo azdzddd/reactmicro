@@ -5,6 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 // import RouterView from "./router/index.js";
 import { routes } from './router/router';
+console.log('🚀 ~ file: App.js ~ line 8 ~ routqweqwewqewqeqwes', routes);
 function App() {
   return (
     <Router basename={window.__POWERED_BY_QIANKUN__ ? '/a/d/reactmicro' : '/'}>
