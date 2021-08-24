@@ -23,7 +23,8 @@ const routeSelf = [
   // },
 ];
 // /\.\/[^\/]+\/_route\.js$/
-const files = require.context('../page', true, /\.\/[^/]+\/_route\.js$/);
+const files = require.context('../page', true, /\.\/[^\/]+\/_route\.js$/);
+console.log('？？？？？？？？？？？？？？', files.keys());
 const otherRouter = files.keys().map((item) => files(item).default);
 const routes = [...routeSelf, ...otherRouter];
 

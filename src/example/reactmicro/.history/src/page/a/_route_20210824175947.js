@@ -5,8 +5,8 @@ const a = {
   routes: [],
 };
 const files = require.context('./', true, /\.\/[^/]+\/[^/]+\/_route\.js$/);
-files.keys().map((item) => {
-  return a.routes.push(files(item).default);
+const otherRouter = files.keys().map((item) => {
+  a.routes.push(files(item).default);
 });
 
 export default a;

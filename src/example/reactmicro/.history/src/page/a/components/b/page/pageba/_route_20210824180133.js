@@ -4,9 +4,10 @@ const b = {
   component: B,
 };
 
-const files = require.context('./', true, /\.\/[^/]+\/[^/]+\/_route\.js$/);
+const files = require.context('./', true, /\.\/[^/] +\/[^/]+\/_route\.js$/);
 files.keys().map((item) => {
   return b.routes.push(files(item).default);
 });
 
 export default b;
+

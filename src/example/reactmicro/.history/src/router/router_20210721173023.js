@@ -1,3 +1,6 @@
+import A from '../page/a';
+import B from '../page/a/components/b';
+import C from '../page/a/components/c';
 import { Redirect } from 'react-router';
 const routeSelf = [
   {
@@ -23,7 +26,8 @@ const routeSelf = [
   // },
 ];
 // /\.\/[^\/]+\/_route\.js$/
-const files = require.context('../page', true, /\.\/[^/]+\/_route\.js$/);
+const files = require.context('../page', true, /\.\/[^\/]+\/_route\.js$/);
+console.log('？？？？？？？？？？？？？？', files.keys());
 const otherRouter = files.keys().map((item) => files(item).default);
 const routes = [...routeSelf, ...otherRouter];
 
