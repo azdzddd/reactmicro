@@ -1,7 +1,8 @@
 import React from 'react';
+import Spin from '../LoadingComponent';
 
 export default function asyncComponent(loadComponent) {
-  return class AsyncComponent extends React.Component {
+  return class extends React.Component {
     constructor(...args) {
       super(...args);
       this.state = {
@@ -11,12 +12,15 @@ export default function asyncComponent(loadComponent) {
     }
     componentDidMount() {
       if (this.ifHasUsingComponent()) return;
+
       loadComponent()
         .then((module) => (module.default ? module.default : module))
         .then((UsingComponent) => {
-          this.setState({
-            UsingComponent,
-          });
+          setTimeout(() => {
+            this.setState({
+              UsingComponent,
+            });
+          }, 200);
         });
     }
 
@@ -26,7 +30,8 @@ export default function asyncComponent(loadComponent) {
 
     render() {
       const { UsingComponent } = this.state;
-      return UsingComponent ? <UsingComponent {...this.props} /> : <div> loading</div>;
+
+      return UsingComponent ? <UsingComponent {...this.props} /> : <Spin />;
     }
   };
 }

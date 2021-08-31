@@ -1,5 +1,9 @@
 import { Redirect } from 'react-router';
+import asyncComponent from '@/utils/asyncComponent';
 const routeSelf = [
+  // {
+  //   component: asyncComponent(() => import('../page/error404')),
+  // },
   {
     path: '/',
     exact: true,
@@ -8,9 +12,13 @@ const routeSelf = [
     },
   },
 ];
+
+const error404 = {
+  component: asyncComponent(() => import('../page/error404')),
+}
 const files = require.context('../page', true, /\.\/[^/]+\/_route\.js$/);
 const otherRouter = files.keys().map((item) => files(item).default);
-const routes = [...routeSelf, ...otherRouter];
+const routes = [...routeSelf, ...otherRouter ,error404];
 console.log('🚀routes', routes);
 
 export { routes };

@@ -1,7 +1,8 @@
-import B from './index';
+import asyncComponent from '@/utils/asyncComponent';
 const b = {
   path: '/a/b',
-  component: B,
+  exact: true,
+  component: asyncComponent(() => import('./index.js')),
   routes: [],
 };
 const files = require.context('./', true, /\.\/[^/]+\/[^/]+\/_route\.js$/);

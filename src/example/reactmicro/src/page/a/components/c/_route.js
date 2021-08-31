@@ -1,7 +1,8 @@
-import C from './index';
+import asyncComponent from '@/utils/asyncComponent';
 const c = {
   path: '/a/c',
-  component: C,
+  exact: true,
+  component: asyncComponent(() => import('./index.js')),
 };
 
 export default c;

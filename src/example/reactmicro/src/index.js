@@ -2,10 +2,14 @@ import './public-path';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import 'antd/dist/antd.css/';
 
 function render(props) {
   const { container } = props;
-  ReactDOM.render(<App />, container ? container.querySelector('#root') : document.querySelector('#root'));
+  ReactDOM.render(
+    <App />,
+    container ? container.querySelector('#root') : document.querySelector('#root'),
+  );
 }
 
 if (!window.__POWERED_BY_QIANKUN__) {
@@ -23,5 +27,7 @@ export async function mount(props) {
 
 export async function unmount(props) {
   const { container } = props;
-  ReactDOM.unmountComponentAtNode(container ? container.querySelector('#root') : document.querySelector('#root'));
+  ReactDOM.unmountComponentAtNode(
+    container ? container.querySelector('#root') : document.querySelector('#root'),
+  );
 }
